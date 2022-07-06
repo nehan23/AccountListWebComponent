@@ -27,7 +27,6 @@ export default class Accounts extends LightningElement {
     accountName;
     /** getAccounts Based on the industry value */
     @wire(getAccounts, {industry: '$industry'}) accounts({data, error}) {
-        console.log(data);
         if (data) {
             this.data = data;
         } else if (error) {
@@ -42,7 +41,6 @@ export default class Accounts extends LightningElement {
             return { fields };
         });
         this.draftValues = [];
-        console.log(records);
 
         try {
             const recordUpdatePromises = records.map((record) =>
