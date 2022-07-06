@@ -1,0 +1,22 @@
+<template>
+<h1>Financial Services Account Listing</h1>
+<lightning-input  onchange={handleInputChange} type="text" label="Enter account number to search"></lightning-input>
+<lightning-button variant="base" onclick={submitSearch} class="slds-m-left_x-small" label="Search"></lightning-button>
+<lightning-card>
+    <template if:true={data}>
+        <lightning-datatable
+            key-field="Id"
+            data={data}
+            columns={columns}
+            onsave={handleSave}
+        >
+       </lightning-datatable>
+    </template>
+    <template if:false={data}>
+        <p>No Records Found</p>>
+       </lightning-datatable>
+    </template>
+</lightning-card>
+    
+    
+</template>
